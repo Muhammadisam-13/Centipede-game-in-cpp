@@ -5,13 +5,8 @@
 #include <cmath>
 using namespace std;
 using namespace sf;
-// for viva solving a question assignment 3
 
-// Initializing Dimensions.
-// resolutionX and resolutionY determine the rendering resolution.
-// Don't edit unless required. Use functions on lines 43, 44, 45 for resizing the game window.
-// setposition
-
+// DIMENSIONS
 const int resolutionX = 960;
 const int resolutionY = 960;
 const int boxPixelsX = 32;
@@ -19,10 +14,10 @@ const int boxPixelsY = 32;
 const int gameRows = resolutionX / boxPixelsX;	  // Total rows on grid
 const int gameColumns = resolutionY / boxPixelsY; // Total columns on grid
 
-// Initializing GameGrid.
+// GAMEGRID
 int gameGrid[gameRows][gameColumns] = {};
 
-// The following exist purely for readability.
+// VARIABLES
 const int x = 0;
 const int y = 1;
 const int exists = 2;
@@ -42,12 +37,7 @@ int xtr_mushroom_num = 0;
 int centipedecount = 1;
 int call_counter = 0;
 
-/////////////////////////////////////////////////////////////////////////////
-//                                                                         //
-// Write your functions declarations here. Some have been written for you. //
-//                                                                         //
-/////////////////////////////////////////////////////////////////////////////
-
+// FUNCTION DECLARATIONS
 void drawPlayer(RenderWindow &window, float player[], Sprite &playerSprite);
 void movePlayer(RenderWindow &window, float player[], Sprite &playerSprite);
 void moveBullet(float bullet[], Clock &bulletClock);
@@ -67,8 +57,9 @@ void DeleteCentipede(RenderWindow &window, float ***centipede, Sprite &Centipede
 void CreateSpider(RenderWindow &window, float player[], Sprite &playerSprite, Sprite &SpiderSprite, float spider[], Sound Spidersound);
 void DrawSpider(RenderWindow &window, float player[], Sprite &playerSprite, Sprite &SpiderSprite, float spider[], float mushroom[][3], Sound Spidersound);
 void bulletspidCollision(RenderWindow &window, float bullet[], Sprite &SpiderSprite, float spider[]);
-int main()
-{
+
+// MAIN FUNCTION
+int main() {
 	int cols = 2;
 	Clock clock;
 	SoundBuffer buffer;
